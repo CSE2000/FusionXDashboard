@@ -1,7 +1,11 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed} from 'vue'
 import { Plus, Bell, ChevronDown, AlignJustify } from 'lucide-vue-next'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
+
+const route =useRoute()
+
+const currentTitle = computed(() => route.name)
 
 defineEmits(['toggleSidebar'])
 
@@ -20,7 +24,7 @@ const toggleDropdown = () => {
       <button class="md:hidden p-2 rounded hover:bg-white/10" @click="$emit('toggleSidebar')">
         <AlignJustify class="h-6 w-6 text-[#FFFF]" />
       </button>
-      <h1 class="text-lg text-[#ffffff] font-semibold whitespace-nowrap">Hello Shubham</h1>
+      <h1 class="text-lg text-[#ffffff] font-semibold whitespace-nowrap">{{ currentTitle }}</h1>
     </div>
 
     <div class="flex items-center space-x-4">

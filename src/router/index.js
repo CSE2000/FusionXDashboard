@@ -11,41 +11,48 @@ import Profile from '@/views/Profile.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'Dashboard', component: Dashboard },
+    { path: '/', name: 'Dashboard', component: Dashboard, meta: { title: 'Dashboard' } },
     {
       path: '/my-strategies',
       name: 'MyStrategies',
       component: MyStrategies,
+      meta: { title: 'MyStrategies' },
     },
     {
       path: '/strategies',
       name: 'Strategies',
       component: Strategies,
+      meta: { title: 'Strategies' },
     },
     {
       path: '/broker',
       name: 'Broker',
       component: Broker,
+      meta: { title: 'Broker' },
     },
     {
       path: '/position',
       name: 'Position',
       component: Position,
+      meta: { title: 'Position' },
     },
     {
       path: '/order',
       name: 'Order',
       component: Order,
+      meta: { title: 'Order' },
     },
     {
       path: '/videos',
       name: 'Videos',
       component: videos,
+      meta: { title: 'videos' },
     },
     {
       path: '/profile',
       name: 'Profile',
       component: Profile,
+      meta: { title: 'Profile' },
     },
   ],
 })
