@@ -1,9 +1,10 @@
 <script setup>
-import { ref, computed} from 'vue'
-import { Plus, Bell, ChevronDown, AlignJustify } from 'lucide-vue-next'
+import { ref, computed } from 'vue'
+import ChangeInMode from './ChangeInMode.vue'
+import { Bell, ChevronDown, AlignJustify } from 'lucide-vue-next'
 import { RouterLink, useRoute } from 'vue-router'
 
-const route =useRoute()
+const route = useRoute()
 
 const currentTitle = computed(() => route.name)
 
@@ -18,20 +19,23 @@ const toggleDropdown = () => {
 
 <template>
   <header
-    class="glass-upgrade fixed top-0 left-0 w-full z-40 md:left-60 md:w-[calc(100%-15rem)] h-16 flex items-center justify-between px-4"
+    class="glass-upgrade fixed top-0 left-0 w-full z-40 lg:left-60 lg:w-[calc(100%-15rem)] h-16 flex items-center justify-between px-4"
   >
     <div class="flex items-center space-x-4">
-      <button class="md:hidden p-2 rounded hover:bg-white/10" @click="$emit('toggleSidebar')">
+      <button class="lg:hidden p-2 rounded hover:bg-white/10" @click="$emit('toggleSidebar')">
         <AlignJustify class="h-6 w-6 text-[#FFFF]" />
       </button>
       <h1 class="text-lg text-[#ffffff] font-semibold whitespace-nowrap">{{ currentTitle }}</h1>
     </div>
 
     <div class="flex items-center space-x-4">
-      <button class="border flex items-center px-3 py-2 border-[#203A43] rounded-lg">
+      <div class="hidden md:block">
+        <ChangeInMode />
+      </div>
+      <!-- <button class="border flex items-center px-3 py-2 border-[#203A43] rounded-lg">
         <Plus class="h-4 w-4 mr-2 text-[#fff]" />
         <span class="hidden sm:inline text-[#FFFFFF]">Add broker</span>
-      </button>
+      </button> -->
       <Bell class="h-6 w-6 cursor-pointer text-[#fff]" />
       <div class="relative">
         <div

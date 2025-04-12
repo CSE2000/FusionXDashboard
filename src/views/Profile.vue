@@ -8,9 +8,9 @@
       class="absolute top-0 left-0 w-full h-full object-cover opacity-5 z-0 pointer-events-none"
     />
 
-    <div class="relative z-10 mx-auto p-4 sm:p-6 md:p-8">
-      <div class="flex flex-col lg:flex-row border-b border-slate-500 pb-5">
-        <div class="flex flex-1 items-center justify-center lg:justify-start space-x-4">
+    <div class="relative z-10 mx-auto p-4 sm:p-6 md:p-8 mt-0 sm:mt-0 md:mt-12 lg:mt-0">
+      <div class="flex flex-col md:flex-row border-b border-slate-500 pb-5">
+        <div class="flex flex-1 items-center justify-center md:justify-start space-x-4">
           <img
             class="h-16 w-16 rounded-full border-2 border-gray-500 object-cover"
             src="../assets/images/img1.png"
@@ -23,7 +23,7 @@
         </div>
 
         <div
-          class="mt-6 lg:mt-0 flex-1 px-0 lg:px-6 border-t lg:border-t-0 lg:border-l border-gray-600"
+          class="mt-6 md:mt-0 flex-1 px-0 md:px-6 border-t md:border-t-0 md:border-l border-gray-600"
         >
           <div class="text-center lg:text-left text-gray-300 space-y-1">
             <p class="font-medium">chandra@mail.com</p>

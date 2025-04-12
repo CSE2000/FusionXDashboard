@@ -21,8 +21,9 @@ const { totalOrders } = storeToRefs(usersOrder)
       alt="Dashboard Background"
       class="absolute top-0 left-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
     />
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 pt-6 mt-0 sm:mt-0 md:mt-0 lg:mt-[3rem]">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 pt-6 mt-6 sm:mt-4 md:mt-14 lg:mt-[3rem]"
+    >
       <div
         class="p-6 bg-white/5 backdrop-blur-md text-white rounded-xl shadow-lg group transition-all duration-300"
       >
@@ -67,12 +68,14 @@ const { totalOrders } = storeToRefs(usersOrder)
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-6">
       <div class="glass-upgrade md:col-span-2 flex flex-col justify-between p-6">
-        <LineChart class="w-full h-[300px]" />
+        <LineChart />
       </div>
 
       <div class="glass-upgrade flex flex-col justify-between p-6">
         <div>
-          <div class="flex justify-between items-center mb-4">
+          <div
+            class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-3 mb-4"
+          >
             <div class="flex items-center gap-3">
               <div class="icon-box group-hover:bg-red-400">
                 <BadgeIndianRupee class="w-5 h-5" />
@@ -103,7 +106,7 @@ const { totalOrders } = storeToRefs(usersOrder)
       </div>
     </div>
 
-    <div class="glass-upgrade overflow-x-auto px-4 py-6">
+    <div class="glass-upgrade overflow-x-auto px-4 py-6 mx-4">
       <h1 class="text-2xl font-semibold mb-4 text-white">Strategy Table</h1>
 
       <table class="min-w-full text-sm text-left text-gray-300">

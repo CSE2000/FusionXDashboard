@@ -20,7 +20,8 @@ const props = defineProps({
 const sidebarClasses = computed(() => {
   return [
     'transform transition-transform duration-300 ease-in-out',
-    props.isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0',
+    'lg:translate-x-0', 
+    props.isOpen ? 'translate-x-0' : '-translate-x-full',
   ]
 })
 
@@ -37,8 +38,8 @@ const menuItems = [
 
 <template>
   <aside
-    class="fixed md:static top-0 left-0 h-screen w-60 bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white z-40 md:z-auto"
-    :class="sidebarClasses"
+    class="fixed lg:static top-0 left-0 h-screen w-60 bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white z-40"
+  :class="sidebarClasses"
   >
     <div class="border-b border-white/10 py-6 px-4 flex justify-center">
       <img src="../assets/images/Logo.svg" alt="Logo" class="w-40 transition-all duration-300" />

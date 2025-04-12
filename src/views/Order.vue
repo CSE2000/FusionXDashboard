@@ -1,6 +1,8 @@
 <template>
-  <div class="relative w-full h-full text-white font-sans mt-0 sm:mt-0 md:mt-0 lg:mt-[3rem]">
-    <div class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] overflow-hidden">
+  <div class="relative w-full h-full text-white font-sans mt-0 sm:mt-0 md:mt-12 lg:mt-[3rem]">
+    <div
+      class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] overflow-hidden"
+    >
       <img
         src="../assets/images/img3.png"
         alt="Dashboard Background"
@@ -11,9 +13,13 @@
         Orders: <span class="text-white">{{ totalOrders }}</span>
       </h1>
 
-      <div class="overflow-x-auto max-h-[34rem] border border-white/10 rounded-xl mx-4 bg-white/5 backdrop-blur-xl">
+      <div
+        class="overflow-x-auto max-h-[34rem] border border-white/10 rounded-xl mx-4 bg-white/5 backdrop-blur-xl"
+      >
         <table class="min-w-full text-sm text-left">
-          <thead class="sticky top-0 z-10 bg-white/10 backdrop-blur text-xs uppercase text-gray-200">
+          <thead
+            class="sticky top-0 z-10 bg-white/10 backdrop-blur text-xs uppercase text-gray-200"
+          >
             <tr>
               <th class="px-4 py-3">Time</th>
               <th class="px-4 py-3">Broker</th>
@@ -31,16 +37,24 @@
               :key="index"
               class="hover:bg-white/5 border-b border-white/10 transition-colors"
             >
-              <td class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]">
+              <td
+                class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]"
+              >
                 {{ row.time }}
               </td>
-              <td class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]">
+              <td
+                class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]"
+              >
                 {{ row.broker }}
               </td>
-              <td class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]">
+              <td
+                class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]"
+              >
                 {{ row.strategy }}
               </td>
-              <td class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]">
+              <td
+                class="px-4 py-2 whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[8rem]"
+              >
                 {{ row.script }}
               </td>
               <td class="px-4 py-2">{{ row.quantity }}</td>

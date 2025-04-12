@@ -1,9 +1,7 @@
 <script></script>
 
 <template>
-  <div
-    class="relative w-full h-fulL  mt-0 sm:mt-0 md:mt-0 lg:mt-4"
-  >
+  <div class="relative w-full h-fulL mt-0 sm:mt-0 md:mt-12 lg:mt-4">
     <div
       class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] overflow-hidden"
     >

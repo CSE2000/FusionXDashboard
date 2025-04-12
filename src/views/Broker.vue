@@ -27,7 +27,7 @@ const openDeleteModal = (row) => {
 
 <template>
   <div
-    class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white overflow-hidden mt-0 sm:mt-0 md:mt-0 lg:mt-[3rem]"
+    class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white overflow-hidden mt-0 sm:mt-0 md:mt-8 lg:mt-[3rem]"
   >
     <img
       src="../assets/images/img3.png"
@@ -75,8 +75,10 @@ const openDeleteModal = (row) => {
                   <ToggleButton v-model="row.active" />
                 </td>
                 <td class="px-4 py-3">
-                  <button class="flex justify-around font-medium text-gray-400 hover:text-gray-300 text-xs px-2 py-1 rounded-md transition">
-                    <Link class="w-6 h-6 p-1"/>
+                  <button
+                    class="flex justify-around font-medium text-gray-400 hover:text-gray-300 text-xs px-2 py-1 rounded-md transition"
+                  >
+                    <Link class="w-6 h-6 p-1" />
                     Connect
                   </button>
                 </td>
