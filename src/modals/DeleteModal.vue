@@ -6,7 +6,7 @@
       @click.self="emit('close')"
     >
       <div
-        class="bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] border border-white/10 rounded-2xl p-6 w-[90%] max-w-md shadow-2xl text-white"
+        class="bg-white text-gray-800 dark:bg-gradient-to-br dark:from-[#0F2027] dark:via-[#203A43] dark:to-[#2C5364] dark:text-white border border-gray-200 dark:border-white/10 rounded-2xl p-6 w-[90%] max-w-md shadow-2xl transition-all"
       >
         <h2 class="text-2xl font-bold mb-4">Are you sure?</h2>
         <hr class="border-white/20 mb-4" />
@@ -36,7 +36,7 @@
 import { defineProps, defineEmits } from 'vue'
 
 defineProps({
-  show: Boolean
+  show: Boolean,
 })
 
 const emit = defineEmits(['close', 'submit'])

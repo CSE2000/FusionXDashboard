@@ -20,7 +20,7 @@ const props = defineProps({
 const sidebarClasses = computed(() => {
   return [
     'transform transition-transform duration-300 ease-in-out',
-    'lg:translate-x-0', 
+    'lg:translate-x-0',
     props.isOpen ? 'translate-x-0' : '-translate-x-full',
   ]
 })
@@ -38,11 +38,15 @@ const menuItems = [
 
 <template>
   <aside
-    class="fixed lg:static top-0 left-0 h-screen w-60 bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white z-40"
-  :class="sidebarClasses"
+    class="fixed lg:static top-0 left-0 h-screen w-60 bg-white text-gray-900 dark:bg-gradient-to-br dark:from-[#0F2027] dark:via-[#203A43] dark:to-[#2C5364] dark:text-white shadow-md dark:shadow-none z-40"
+    :class="sidebarClasses"
   >
-    <div class="border-b border-white/10 py-6 px-4 flex justify-center">
-      <img src="../assets/images/Logo.svg" alt="Logo" class="w-40 transition-all duration-300" />
+    <div class="border-b border-gray-300 dark:border-white/10 py-[6%] px-2 flex justify-center">
+      <span
+        class="text-2xl md:text-3xl lg:text-3xl font-bold text-green-600 dark:text-green-400 tracking-wide"
+      >
+        Fusion<span class="text-green-500 dark:text-green-300">X</span>
+      </span>
     </div>
 
     <nav class="mt-6 px-2">
@@ -50,14 +54,23 @@ const menuItems = [
         <li v-for="item in menuItems" :key="item.path">
           <RouterLink
             :to="item.path"
-            class="flex items-center px-3 py-3 rounded-lg transition-all duration-200"
+            class="group flex items-center px-3 py-3 rounded-lg transition-all duration-300 ease-in-out transform-gpu will-change-transform"
             :class="{
-              'bg-white/15 font-semibold text-white': route.path === item.path,
-              'text-gray-300 hover:text-white hover:bg-white/10': route.path !== item.path,
+              'bg-gray-200 dark:bg-white/15 font-medium text-gray-900 dark:text-white':
+                route.path === item.path,
+              'text-gray-600 hover:bg-gray-100 hover:text-black dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10':
+                route.path !== item.path,
             }"
           >
-            <component :is="item.icon" class="w-5 h-6" />
-            <span class="ml-3 whitespace-nowrap">{{ item.label }}</span>
+            <component
+              :is="item.icon"
+              class="w-5 h-6 transition-transform duration-300 ease-in-out transform-gpu group-hover:scale-110"
+            />
+            <span
+              class="ml-3 whitespace-nowrap text-sm md:text-base lg:text-lg xl:text-md font-medium transition-all duration-300 ease-in-out transform-gpu group-hover:translate-x-1 group-hover:font-semibold will-change-transform"
+            >
+              {{ item.label }}
+            </span>
           </RouterLink>
         </li>
       </ul>

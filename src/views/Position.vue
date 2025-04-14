@@ -22,7 +22,7 @@ const tableHeaders = [
 
 <template>
   <div
-    class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white overflow-hidden mt-0 sm:mt-0 md:mt-12 lg:mt-[3rem]"
+    class="relative min-h-screen text-gray-800 dark:text-white overflow-hidden mt-0 sm:mt-0 md:mt-12 lg:mt-[3rem] bg-gradient-to-br from-[#f8fafc] via-[#e2e8f0] to-[#cbd5e1] dark:from-[#0F2027] dark:via-[#203A43] dark:to-[#2C5364]"
   >
     <img
       src="../assets/images/img3.png"
@@ -31,7 +31,7 @@ const tableHeaders = [
     />
     <div class="relative z-10 p-4">
       <div
-        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl shadow-lg transition-all duration-300 p-4"
+        class="bg-white/80 dark:bg-white/5 backdrop-blur-xl border border-gray-300/20 dark:border-white/10 rounded-xl shadow-lg transition-all duration-300 p-4 mt-2"
       >
         <div
           class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 text-sm font-semibold"
@@ -43,18 +43,18 @@ const tableHeaders = [
               <span v-else class="text-red-500">{{ totalProfit }}</span>
             </span>
           </p>
-          <h1 class="text-white">{{ trades.length }} Positions</h1>
+          <h1 class="text-gray-800 dark:text-white">{{ trades.length }} Positions</h1>
         </div>
 
         <!-- Table -->
         <div class="overflow-auto rounded-lg max-h-[80vh]">
-          <table class="min-w-full text-sm text-left border-collapse text-white">
-            <thead class="bg-white/10 sticky top-0 backdrop-blur z-10">
+          <table class="min-w-full text-sm text-left border-collapse text-gray-800 dark:text-white">
+            <thead class="bg-white/90 dark:bg-white/10 sticky top-0 z-10 backdrop-blur">
               <tr>
                 <th
                   v-for="header in tableHeaders"
                   :key="header"
-                  class="px-4 py-2 whitespace-nowrap text-xs uppercase tracking-wider text-gray-200"
+                  class="px-4 py-2 whitespace-nowrap text-xs uppercase tracking-wider text-gray-600 dark:text-gray-200"
                 >
                   {{ header }}
                 </th>
@@ -64,7 +64,7 @@ const tableHeaders = [
               <tr
                 v-for="(row, index) in trades"
                 :key="index"
-                class="hover:bg-white/5 transition text-center"
+                class="hover:bg-gray-100 dark:hover:bg-white/10 transition text-center"
               >
                 <td class="px-4 py-2 max-w-[10rem] truncate">{{ row.strategy }}</td>
                 <td class="px-4 py-2 max-w-[10rem] truncate">{{ row.broker }}</td>

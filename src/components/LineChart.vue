@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <h2 class="text-lg font-semibold mb-4 text-white">Profit Overview</h2>
+    <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Profit Overview</h2>
     <div class="relative w-full h-[300px]">
       <canvas ref="chartCanvas" class="w-full h-full"></canvas>
     </div>
@@ -8,13 +8,23 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+import { useThemeStore } from '@/stores/theme'
+import { storeToRefs } from 'pinia'
 import Chart from 'chart.js/auto'
 
 const chartCanvas = ref(null)
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
 
-onMounted(() => {
-  new Chart(chartCanvas.value, {
+let chartInstance = null
+
+const createChart = () => {
+  if (chartInstance) {
+    chartInstance.destroy()
+  }
+
+  chartInstance = new Chart(chartCanvas.value, {
     type: 'line',
     data: {
       labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
@@ -35,18 +45,32 @@ onMounted(() => {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          labels: { color: 'white' },
+          labels: {
+            color: isDark.value ? 'white' : 'black',
+          },
         },
       },
       scales: {
         x: {
-          ticks: { color: 'white' },
+          ticks: {
+            color: isDark.value ? 'white' : 'black',
+          },
         },
         y: {
-          ticks: { color: 'white' },
+          ticks: {
+            color: isDark.value ? 'white' : 'black',
+          },
         },
       },
     },
   })
+}
+
+onMounted(() => {
+  createChart()
+})
+
+watch(isDark, () => {
+  createChart()
 })
 </script>

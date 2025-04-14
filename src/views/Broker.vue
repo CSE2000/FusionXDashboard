@@ -27,31 +27,34 @@ const openDeleteModal = (row) => {
 
 <template>
   <div
-    class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white overflow-hidden mt-0 sm:mt-0 md:mt-8 lg:mt-[3rem]"
+    class="relative min-h-screen overflow-hidden mt-0 sm:mt-0 md:mt-8 lg:mt-[3rem] text-gray-800 dark:text-white bg-gradient-to-br from-[#f8fafc] via-[#e2e8f0] to-[#cbd5e1] dark:from-[#0F2027] dark:via-[#203A43] dark:to-[#2C5364]"
   >
     <img
       src="../assets/images/img3.png"
       alt="Dashboard Background"
       class="absolute top-0 left-0 w-full h-full object-cover opacity-5 z-0 pointer-events-none"
     />
+
     <div class="relative z-10 w-full h-full px-4 py-6">
-      <div class="shadow-lg transition-all duration-300 p-4">
+      <div
+        class="shadow-md dark:shadow-none transition-all duration-300 p-4 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-300/20 dark:border-white/10"
+      >
         <div
           class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4"
         >
           <button
-            class="border border-white/20 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md text-sm font-medium transition-all"
+            class="border border-gray-400 dark:border-white/20 bg-white/80 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-800 dark:text-white px-4 py-2 rounded-md text-sm font-medium transition-all"
             @click="openEditedBroker()"
           >
             Add New Broker
           </button>
-          <p class="text-sm text-white/80">{{ broker.length }} Brokers</p>
+          <p class="text-sm text-gray-700 dark:text-white/80">{{ broker.length }} Brokers</p>
         </div>
 
         <div class="overflow-x-auto rounded-lg max-h-[32rem]">
-          <table class="min-w-full text-sm text-white">
+          <table class="min-w-[768px] w-full text-sm">
             <thead
-              class="bg-white/10 backdrop-blur sticky top-0 z-10 text-left text-medium uppercase tracking-wide text-white/60 font-semibold"
+              class="bg-white/90 dark:bg-white/10 backdrop-blur sticky top-0 z-10 text-left text-gray-700 dark:text-white/60 uppercase tracking-wide font-semibold"
             >
               <tr>
                 <th class="px-4 py-3">Broker</th>
@@ -62,11 +65,11 @@ const openDeleteModal = (row) => {
                 <th class="px-4 py-3 text-center">Action</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="text-gray-800 dark:text-white">
               <tr
                 v-for="(row, index) in broker"
                 :key="index"
-                class="hover:bg-white/10 transition-all border-b border-white/10"
+                class="hover:bg-gray-100 dark:hover:bg-white/5 transition-all border-b border-gray-300/20 dark:border-white/10"
               >
                 <td class="px-4 py-3 truncate max-w-[12rem]">{{ row.broker }}</td>
                 <td class="px-4 py-3 truncate max-w-[12rem]">{{ row.brokeruserid }}</td>
@@ -76,24 +79,26 @@ const openDeleteModal = (row) => {
                 </td>
                 <td class="px-4 py-3">
                   <button
-                    class="flex justify-around font-medium text-gray-400 hover:text-gray-300 text-xs px-2 py-1 rounded-md transition"
+                    class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-xs px-2 py-1 rounded-md transition"
                   >
-                    <Link class="w-6 h-6 p-1" />
+                    <Link class="w-5 h-5" />
                     Connect
                   </button>
                 </td>
                 <td class="text-center px-4 py-3 space-x-2">
                   <button
-                    class="text-blue-400 hover:text-blue-200 text-medium font-medium"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
                     @click="openEditedBroker(row)"
                   >
                     Edit
                   </button>
-                  <button class="text-green-400 hover:text-green-200 text-medium font-medium">
+                  <button
+                    class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-medium"
+                  >
                     Orders/Positions
                   </button>
                   <button
-                    class="text-red-400 hover:text-red-200 text-medium font-medium"
+                    class="text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-300 font-medium"
                     @click="openDeleteModal(row)"
                   >
                     Delete
@@ -101,7 +106,7 @@ const openDeleteModal = (row) => {
                 </td>
               </tr>
               <tr v-if="broker.length === 0">
-                <td colspan="6" class="text-center py-4 text-white/60 text-sm">
+                <td colspan="6" class="text-center py-4 text-gray-500 dark:text-white/60 text-sm">
                   No brokers found.
                 </td>
               </tr>
@@ -111,6 +116,7 @@ const openDeleteModal = (row) => {
       </div>
     </div>
 
+    <!-- Modals -->
     <BrokerEditModal
       v-if="isEditedBrokerOpen"
       :show="isEditedBrokerOpen"

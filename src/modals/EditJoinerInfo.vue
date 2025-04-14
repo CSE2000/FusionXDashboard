@@ -5,8 +5,11 @@
       class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-5 backdrop-blur-sm"
       @click.self="emit('close')"
     >
-      <div
+      <!-- <div
         class="bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] border border-white/10 rounded-2xl p-6 w-[90%] max-w-md shadow-2xl text-white"
+      > -->
+      <div
+        class="bg-white text-gray-800 dark:bg-gradient-to-br dark:from-[#0F2027] dark:via-[#203A43] dark:to-[#2C5364] dark:text-white border border-gray-200 dark:border-white/10 rounded-2xl p-6 w-[90%] max-w-md shadow-2xl transition-all"
       >
         <h2 class="text-2xl font-bold mb-4">Edit Joiner Info</h2>
         <hr class="border-white/20 mb-4" />
@@ -14,30 +17,36 @@
         <div class="space-y-4">
           <div>
             <label class="block text-sm font-semibold mb-1">Lot 1</label>
-            <input 
-              type="number" 
-              v-model="lot1" 
-              @input="validateInput('lot1')" 
-              class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            <input
+              type="number"
+              v-model="lot1"
+              @input="validateInput('lot1')"
+              class="w-full px-3 py-2 bg-white text-gray-800 dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 rounded transition"
             />
           </div>
 
           <div>
             <label class="block text-sm font-semibold mb-1">Re Entry</label>
-            <input 
-              type="number" 
-              v-model="reEntry" 
-              @input="validateInput('reEntry')" 
-              class="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            <input
+              type="number"
+              v-model="reEntry"
+              @input="validateInput('reEntry')"
+              class="w-full px-3 py-2 bg-white text-gray-800 dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 rounded transition"
             />
           </div>
         </div>
 
         <div class="flex justify-end mt-6 space-x-3">
-          <button @click="handleSubmit" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg transition">
+          <button
+            @click="handleSubmit"
+            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg transition"
+          >
             Submit
           </button>
-          <button @click="emit('close')" class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-lg transition">
+          <button
+            @click="emit('close')"
+            class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-lg transition"
+          >
             Close
           </button>
         </div>

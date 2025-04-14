@@ -14,8 +14,9 @@ const { selectedIndex, navItems, strategies } = storeToRefs(strategyStore)
 
 <template>
   <div
-    class="relative min-h-screen bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white font-sans overflow-hidden mt-0 sm:mt-0 md:mt-14 lg:mt-[4rem]"
-  >
+  class="relative min-h-screen bg-gradient-to-br from-gray-100 to-white dark:bg-gradient-to-br dark:from-[#0F2027] dark:via-[#203A43] dark:to-[#2C5364] text-gray-900 dark:text-white font-sans overflow-hidden mt-0 sm:mt-0 md:mt-14 lg:mt-[4rem]"
+>
+
     <img
       src="../assets/images/img3.png"
       alt="Dashboard Background"
